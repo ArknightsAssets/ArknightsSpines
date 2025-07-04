@@ -19,7 +19,7 @@ subprocess.run(["git", "checkout", branch], check=True)
 
 # download resources
 for url, destination in (
-    ("https://github.com/ashleney/SpineExporter/releases/download/0.0.2/SpineExporter.zip", "SpineExporter"),
+    ("https://github.com/ashleney/SpineExporter/releases/download/0.0.3/SpineExporter.zip", "SpineExporter"),
     ("https://github.com/isHarryh/Ark-Models/archive/refs/heads/main.zip", "Ark-Models-main"),
 ):
     if os.path.exists(destination):
@@ -50,6 +50,7 @@ for name, entry in models_data["data"].items():
             f"--atlas {os.path.join(source_directory, filenames['.atlas'])} "
             f'--output {output_path} '
             f'--animation "Relax" '
+            f"--pma "
             f"--fps 24 "
             f"--loop "
             f"--width 1024 "
@@ -73,6 +74,7 @@ for name, entry in models_data["data"].items():
             f"--atlas {os.path.join(source_directory, filenames['.atlas'])} "
             f'--output {output_path} '
             f'--animation "Idle" '
+            f"--pma "
             f"--fps 24 "
             f"--crf 40 "
             f"--loop "
